@@ -3,54 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b1220">
-  <title>연락하기</title>
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="차량 소유자에게 전화 또는 문자로 연락하는 개인 페이지">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23090909'/%3E%3Cpath d='M13 19h38v8H36v25h-8V27H13z' fill='%23e82127'/%3E%3C/svg%3E">
+  <title>차량 소유자에게 연락하기</title>
   <style>
-    :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    :root { color-scheme: dark; font-family: Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #090909; color: #f5f5f5; }
     * { box-sizing: border-box; }
     body {
       margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px;
-      background: radial-gradient(circle at 50% 5%, #1f3b70 0, #101b30 33%, #080d17 72%);
-      color: #f8fafc;
+      background: radial-gradient(circle at 50% -15%, rgba(232, 33, 39, .22), transparent 38%), linear-gradient(180deg, #111 0%, #070707 100%);
     }
     main {
-      width: min(100%, 420px); padding: 36px 24px 28px; text-align: center;
-      background: rgba(17, 27, 46, .9); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 28px; box-shadow: 0 24px 70px rgba(0,0,0,.45);
-      backdrop-filter: blur(18px);
+      width: min(100%, 420px); padding: 34px 24px 24px; text-align: center;
+      background: linear-gradient(160deg, rgba(31,31,31,.98), rgba(15,15,15,.98));
+      border: 1px solid rgba(255,255,255,.1); border-radius: 28px; box-shadow: 0 28px 90px rgba(0,0,0,.58);
     }
-    .mark {
-      width: 68px; height: 68px; margin: 0 auto 22px; display: grid; place-items: center;
-      border-radius: 22px; background: linear-gradient(145deg, #60a5fa, #2563eb);
-      box-shadow: 0 24px 70px rgba(0,0,0,.45); font-size: 31px;
+    .emblem {
+      width: 92px; height: 92px; margin: 0 auto 22px; display: grid; place-items: center;
+      border-radius: 24px; background: #090909; border: 1px solid rgba(255,255,255,.09);
+      box-shadow: inset 0 0 0 1px rgba(232,33,39,.12), 0 18px 40px rgba(0,0,0,.42);
+      color: #e82127; font-size: 2rem; font-weight: 800; letter-spacing: -.12em; padding-right: .12em;
     }
-    h1 { margin: 0 0 10px; font-size: 1.75rem; letter-spacing: -.04em; }
-    .number { margin: 0 0 28px; color: #a9b4c8; font-size: 1.05rem; letter-spacing: .03em; }
-    .actions { display: grid; gap: 14px; }
-    a {
-      min-height: 62px; display: flex; align-items: center; justify-content: center; gap: 10px;
-      border-radius: 18px; color: white; font-size: 1.08rem; font-weight: 750;
-      text-decoration: none; -webkit-tap-highlight-color: transparent;
-      transition: transform .15s ease, filter .15s ease;
+    .eyebrow { margin: 0 0 9px; color: #e82127; font-size: .82rem; font-weight: 750; letter-spacing: .2em; }
+    h1 { margin: 0 0 10px; font-size: clamp(1.55rem, 7vw, 2rem); line-height: 1.22; letter-spacing: -.045em; }
+    .number { margin: 0 0 28px; color: #b8b8b8; font-size: 1.08rem; letter-spacing: .045em; }
+    .actions { display: grid; gap: 12px; }
+    .button {
+      min-height: 64px; display: flex; align-items: center; justify-content: center; gap: 11px;
+      border-radius: 16px; color: #fff; font-size: 1.05rem; font-weight: 750; text-decoration: none;
+      transition: transform .15s ease, filter .15s ease; -webkit-tap-highlight-color: transparent;
     }
-    a:active { transform: scale(.98); }
-    a:focus-visible { outline: 3px solid #bfdbfe; outline-offset: 3px; }
-    .call { background: linear-gradient(135deg, #22c55e, #16a34a); }
-    .text { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-    a:hover { filter: brightness(1.08); }
-    .hint { margin: 24px 0 0; color: #9aa8bc; font-size: .87rem; line-height: 1.55; }
+    .button:active { transform: scale(.98); }
+    .button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    .call { background: #e82127; box-shadow: 0 12px 30px rgba(232,33,39,.25); }
+    .text { background: #303030; border: 1px solid rgba(255,255,255,.12); }
+    .button:hover { filter: brightness(1.1); }
+    .icon { font-size: 1.15rem; line-height: 1; }
+    .notice { margin: 20px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); color: #8f8f8f; font-size: .82rem; line-height: 1.55; }
+    .disclaimer { display: block; margin-top: 5px; color: #707070; font-size: .74rem; }
   </style>
 </head>
 <body>
   <main aria-labelledby="title">
-    <div class="mark" aria-hidden="true">☎</div>
-    <h1 id="title">연락하기</h1>
+    <div class="emblem" aria-hidden="true">M3</div>
+    <p class="eyebrow">MODEL 3 OWNER</p>
+    <h1 id="title">차량 소유자에게 연락하기</h1>
     <p class="number">010-2912-1280</p>
     <div class="actions">
-      <a class="call" href="tel:01029121280" aria-label="010-2912-1280으로 전화 걸기">☎ 전화 걸기</a>
-      <a class="text" href="sms:01029121280" aria-label="010-2912-1280으로 문자 보내기">✉ 문자 보내기</a>
+      <a class="button call" href="tel:01029121280" aria-label="010-2912-1280으로 전화 걸기"><span class="icon">☎</span>전화 걸기</a>
+      <a class="button text" href="sms:01029121280" aria-label="010-2912-1280으로 문자 보내기"><span class="icon">✉</span>문자 보내기</a>
     </div>
-    <p class="hint">원하는 연락 방법을 선택해 주세요.</p>
+    <p class="notice">원하는 연락 방법을 선택해 주세요.<span class="disclaimer">개인 차량 연락용 페이지이며 Tesla와 관련이 없습니다.</span></p>
   </main>
 </body>
 </html>
