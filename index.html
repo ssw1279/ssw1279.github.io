@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <title>연락하기</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px;
+      background: radial-gradient(circle at 50% 5%, #1f3b70 0, #101b30 33%, #080d17 72%);
+      color: #f8fafc;
+    }
+    main {
+      width: min(100%, 420px); padding: 36px 24px 28px; text-align: center;
+      background: rgba(17, 27, 46, .9); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px; box-shadow: 0 24px 70px rgba(0,0,0,.45);
+      backdrop-filter: blur(18px);
+    }
+    .mark {
+      width: 68px; height: 68px; margin: 0 auto 22px; display: grid; place-items: center;
+      border-radius: 22px; background: linear-gradient(145deg, #60a5fa, #2563eb);
+      box-shadow: 0 24px 70px rgba(0,0,0,.45); font-size: 31px;
+    }
+    h1 { margin: 0 0 10px; font-size: 1.75rem; letter-spacing: -.04em; }
+    .number { margin: 0 0 28px; color: #a9b4c8; font-size: 1.05rem; letter-spacing: .03em; }
+    .actions { display: grid; gap: 14px; }
+    a {
+      min-height: 62px; display: flex; align-items: center; justify-content: center; gap: 10px;
+      border-radius: 18px; color: white; font-size: 1.08rem; font-weight: 750;
+      text-decoration: none; -webkit-tap-highlight-color: transparent;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    a:active { transform: scale(.98); }
+    a:focus-visible { outline: 3px solid #bfdbfe; outline-offset: 3px; }
+    .call { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .text { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    a:hover { filter: brightness(1.08); }
+    .hint { margin: 24px 0 0; color: #9aa8bc; font-size: . retiೇವ? }
+  </style>
+</head>
+<body>
+  <main aria-labelledby="title">
+    <div class="mark" aria-hidden="true">☎</div>
+    <h1 id="title">연락하기</h1>
+    <p class="number">010-2912-1280</p>
+    <div class="actions">
+      <a class="call" href="tel:01029121280" aria-label="010-2912-1280으로 전화 걸기">☎ 전화 걸기</a>
+      <a class="text" href="sms:01029121280" aria-label="010-2912-1280으로 문자 보내기">✉ 문자 보내기</a>
+    </div>
+    <p class="hint">원하는 연락 방법을 선택해 주세요.</p>
+  </main>
+</body>
+</html>
